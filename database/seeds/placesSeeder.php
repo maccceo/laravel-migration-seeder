@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Place;
 
-class placesFactory extends Seeder
+class placesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class placesFactory extends Seeder
      */
     public function run()
     {
-        //
+        factory(Place::class, 20) -> create();
     }
 }
