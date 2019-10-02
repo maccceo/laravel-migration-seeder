@@ -2,6 +2,8 @@
 
 @section('content')
 
+	<a href="{{ route('plc.create') }}">Aggiungi elementi</a>
+
 	@foreach ($places as $place)
 		<div class="city">
 			<p>

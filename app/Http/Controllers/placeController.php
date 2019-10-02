@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Place;
+use Validator;
 
 class placeController extends Controller
 {
@@ -26,7 +27,7 @@ class placeController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -37,7 +38,15 @@ class placeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request -> validate([
+            'name' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'nation' => 'required'
+        ]);
+        $places = Place::create($validatedData);
+
+        return redirect('/');
     }
 
     /**
